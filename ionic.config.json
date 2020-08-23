@@ -1,0 +1,7 @@
+{
+  "name": "clickstore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
