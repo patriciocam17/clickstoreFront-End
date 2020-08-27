@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { IonSlides } from '@ionic/angular';
+import { NgForm, Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { IonSlides, NavController } from '@ionic/angular';
 import { UsuarioService } from '../../services/usuario.service';
+import { UiserviceService } from '../../services/uiservice.service';
+import { Usuario } from '../../Interfaces/interfaces';
+
 
 @Component({
   selector: 'app-login',
@@ -50,11 +53,29 @@ export class LoginPage implements OnInit {
 avatarSlide = {
   slidesPerView: 3.5
 
-
 }
 
+loginUsuario = {
 
-  constructor( private us: UsuarioService ) { }
+  email: 'Pato@email.cl',
+  password: 'asdf1234'
+}
+
+  registroUsuario: FormGroup
+
+constructor( private us: UsuarioService, private navCtrl: NavController, 
+            private UiserviceService: UiserviceService, private formBuilder: FormBuilder) {
+              
+              this.registroUsuario = this.formBuilder.group({
+               
+
+                nombre: ['',Validators.required],
+                email: ['',Validators.required],
+                password: ['',Validators.required]
+
+
+              })
+            }
 
   ngOnInit() {  
   }
@@ -62,16 +83,39 @@ avatarSlide = {
     this.slides.lockSwipes( true );
   }
 
-  login ( fLogin: NgForm ){
+  async login ( fLogin: NgForm ){
+
+    if(fLogin.invalid){ return; }
+
+   const exist = await this.us.login( this.loginUsuario.email, this.loginUsuario.password);
+
+   if(exist){
+     //navergar al tab
+
+     this.navCtrl.navigateRoot('/main/tabs/tab1', {animated : true});
+
+
+   }else{
+     //mostrar alerta
+        this.UiserviceService.alerta('Usuario o contraseña no es correcto');
+   }
 
     console.log(fLogin.valid);
-    this.us.login("hola", "123").subscribe(rest => { 
-      console.log(rest);
-     } )
+    console.log (this.loginUsuario);
+
+    
+    
+
+    
+    //this.us.login("hola", "123").subscribe(rest => { 
+     //console.log(rest);
+     //   } );
 
   }
 
   registro ( fRegistro: NgForm ){
+
+
 
     console.log(fRegistro.valid);
 

@@ -23,6 +23,7 @@
                     <ion-label>Email</ion-label>
                     <ion-input name="email"
                                 type="email"
+                                [(ngModel)]="loginUsuario.email"
                                 required></ion-input>
                   </ion-item>
 
@@ -30,6 +31,7 @@
                     <ion-label>Password</ion-label>
                     <ion-input name="password"
                                 type="password"
+                                [(ngModel)]="loginUsuario.password"
                                 required></ion-input>
                   </ion-item>
 
@@ -80,14 +82,12 @@
         
             <form (ngSubmit)="registro( fRegistro )" #fRegistro="ngForm" >
                 <ion-row>
-                    <ion-col>
-                        
-                        <ion-list>
-                            
+                    <ion-col>                        
+                        <ion-list>                            
                             <ion-item>
                             <ion-label>Email</ion-label>
                             <ion-input name="email" 
-                                        type="email"
+                                        type="email"                                                                               
                                         required></ion-input>
                             </ion-item>
 
@@ -95,6 +95,7 @@
                             <ion-label>Nombre</ion-label>
                             <ion-input name="nombre"
                                         type="text"
+                                        
                                         required></ion-input>
                             </ion-item>
 
