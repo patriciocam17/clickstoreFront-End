@@ -6,9 +6,6 @@ import { promise } from 'protractor';
 import { Usuario } from '../Interfaces/interfaces';
 
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -44,30 +41,7 @@ token: string = null;
 
        });
     
-     }
-
-     registro (usuario: Usuario){
-
-      return new Promise(resolve=>{
-        this.http.post('http://localhost:3000/usuarios/create', usuario)
-        .subscribe(resp => {
-          console.log(resp);
-
-          if(resp['ok']){
-            this.guardarToken( resp['token'] );
-            resolve(true);
-          }else{
-            this.token = null;
-            this.storage.clear();
-            resolve(false);
-          }
-
-        })
-
-      });
-
-     }
-     
+     }    
     async guardarToken( token: string){
 
       this.token = token;

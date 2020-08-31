@@ -11,6 +11,7 @@ import { Usuario } from '../../Interfaces/interfaces';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
 
   @ViewChild('slidePrincipal') slides: IonSlides;
@@ -64,18 +65,8 @@ loginUsuario = {
   registroUsuario: FormGroup
 
 constructor( private us: UsuarioService, private navCtrl: NavController, 
-            private UiserviceService: UiserviceService, private formBuilder: FormBuilder) {
-              
-              this.registroUsuario = this.formBuilder.group({
-               
-
-                nombre: ['',Validators.required],
-                email: ['',Validators.required],
-                password: ['',Validators.required]
-
-
-              })
-            }
+            private UiserviceService: UiserviceService) {            
+                        }
 
   ngOnInit() {  
   }
@@ -113,13 +104,7 @@ constructor( private us: UsuarioService, private navCtrl: NavController,
 
   }
 
-  registro ( fRegistro: NgForm ){
-
-
-
-    console.log(fRegistro.valid);
-
-  }
+  
   seleccionarAvatar ( avatar ){
 
     this.avatars.forEach( av => av.seleccionado = false );

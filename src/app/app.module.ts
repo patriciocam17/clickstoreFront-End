@@ -12,7 +12,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
       AppRoutingModule,
       HttpClientModule,
       IonicStorageModule.forRoot(),
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      FormsModule
+    
     ],
   providers: [
     StatusBar,

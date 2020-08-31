@@ -1,0 +1,43 @@
+<form [formGroup] ="registro" (ngSubmit) ="registrar()" >
+  <ion-row>
+      <ion-col>                        
+          <ion-list>                            
+              <ion-item>
+              <ion-label>Email</ion-label>
+              <ion-input name="email" 
+                          type="email"
+                          formControlName="email"                                                    
+                          required></ion-input>
+              </ion-item>
+
+              <ion-item>
+              <ion-label>Nombre</ion-label>
+              <ion-input name="nombre"
+                          type="text"
+                          formControlName="nombre"   
+                          required></ion-input>
+              </ion-item>
+
+              <ion-item>
+              <ion-label>Password</ion-label>
+              <ion-input name="password"
+                          type="password"
+                          formControlName="password"   
+                          required></ion-input>
+              </ion-item>
+
+          </ion-list>
+      </ion-col>
+  </ion-row>
+  
+  <ion-row>
+  <ion-col>
+      <ion-button type="submit"
+                  shape="round"
+                  class="magentta">
+          Crear usuario
+      </ion-button>
+  </ion-col>
+</ion-row>
+
+</form>
