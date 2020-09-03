@@ -21,7 +21,6 @@ export class RegistroService {
       this.http.post('http://localhost:3000/usuarios/create', usuario)
       .subscribe(resp => {
         console.log(resp);
-
         if(resp['ok']){
           this.guardarToken( resp['token'] );
           resolve(true);
@@ -30,16 +29,11 @@ export class RegistroService {
           this.storage.clear();
           resolve(false);
         }  
-
       })
-
     });
-
    }
    async guardarToken( token: string){
-
     this.token = token;
-
     await this.storage.set ('token', token);
    }
 }

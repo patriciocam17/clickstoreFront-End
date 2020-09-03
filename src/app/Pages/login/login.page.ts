@@ -13,7 +13,7 @@ import { Usuario } from '../../Interfaces/interfaces';
 })
 
 export class LoginPage implements OnInit {
-
+  public registro: FormGroup
   @ViewChild('slidePrincipal') slides: IonSlides;
 
   avatars = [
@@ -65,7 +65,16 @@ loginUsuario = {
   registroUsuario: FormGroup
 
 constructor( private us: UsuarioService, private navCtrl: NavController, 
-            private UiserviceService: UiserviceService) {            
+            private UiserviceService: UiserviceService) { 
+              
+      this.registro = new FormGroup({
+        
+        nombre: new FormControl('',Validators.required),
+        email: new FormControl('',Validators.required),
+        password: new FormControl('',Validators.required)
+        
+
+      })           
                         }
 
   ngOnInit() {  
@@ -104,7 +113,6 @@ constructor( private us: UsuarioService, private navCtrl: NavController,
 
   }
 
-  
   seleccionarAvatar ( avatar ){
 
     this.avatars.forEach( av => av.seleccionado = false );
