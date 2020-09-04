@@ -32,8 +32,16 @@ export class RegistroService {
       })
     });
    }
+
+   getUniversity(){
+     return this.http.get('http://localhost:3000/universidades/list').pipe()
+   }
+
+
    async guardarToken( token: string){
     this.token = token;
     await this.storage.set ('token', token);
    }
+
+
 }

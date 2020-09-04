@@ -25,7 +25,12 @@
                           formControlName="password"   
                           required></ion-input>
               </ion-item>
-
+              <ion-item>
+                <ion-label>Universidades</ion-label>
+                <ion-select formControlName="universidad" value="notifications" interface="action-sheet">
+                  <ion-select-option *ngFor="let item of universidades" value="{{item._id}}" >{{item.nombre}}</ion-select-option>
+                </ion-select>
+              </ion-item>
           </ion-list>
       </ion-col>
   </ion-row>
