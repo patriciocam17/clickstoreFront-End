@@ -9,6 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import {RegisterComponent} from './register/register/register.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { SelectorAvatComponent } from './register/register/selector-avat/selector-avat.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginPage,RegisterComponent]
+  declarations: [LoginPage,RegisterComponent,SelectorAvatComponent]
 })
 export class LoginPageModule {}
