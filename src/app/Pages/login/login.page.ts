@@ -51,10 +51,7 @@ constructor( private us: UsuarioService, private navCtrl: NavController,
 
    if(exist){
      //navergar al tab
-
      this.navCtrl.navigateRoot('/main/tabs/tab1', {animated : true});
-
-
    }else{
      //mostrar alerta
         this.UiserviceService.alerta('Usuario o contraseña no es correcto');

@@ -3,14 +3,18 @@ import { PreloadAllModules, RouterModule, Routes, CanLoad } from '@angular/route
 import { UsuarioGuard } from './guards/usuario.guard';
 
 const routes: Routes = [
+ 
   {path: 'main',
    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule),
-   canLoad: [UsuarioGuard]
+  // canLoad: [UsuarioGuard]
+
+   
 },
   {path: 'login', loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)},
     { path: '',
     pathMatch: 'full',
-    redirectTo: 'login' 
+    redirectTo: 'login'
+    
   },
   
     

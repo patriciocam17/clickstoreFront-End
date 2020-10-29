@@ -6,20 +6,14 @@ import { UsuarioService } from '../services/usuario.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioGuard implements CanActivate, CanLoad {
+export class UsuarioGuard implements CanLoad {
   
 constructor(private usuarioService: UsuarioService){}
 
   canLoad():Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return false;
-
-      return this.usuarioService.validToken();
-
-  }
-
-  canActivate() :Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return false;
     
+    return this.usuarioService.validToken();
   }
-  
+
+
 }
