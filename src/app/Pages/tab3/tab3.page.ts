@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(public storage: Storage) {
+const token : any = this.storage.get('token');
+
+console.log(token.__zone_symbol__value);
+  }
+
 
 }

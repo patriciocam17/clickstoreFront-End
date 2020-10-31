@@ -12,10 +12,11 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Tab4Pipe } from './tab4.pipe';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, Tab4Pipe],
   entryComponents: [],
   imports: [
     BrowserModule,

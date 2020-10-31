@@ -10,6 +10,8 @@ import { LoginPage } from './login.page';
 import {RegisterComponent} from './register/register/register.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { SelectorAvatComponent } from './register/register/selector-avat/selector-avat.component';
+//import * as jwt_decode from "jwt-decode";
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { SelectorAvatComponent } from './register/register/selector-avat/selecto
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
   ],
   declarations: [LoginPage,RegisterComponent,SelectorAvatComponent]
 })

@@ -35,9 +35,23 @@ export class Tab1Page {
     {
       img: 'coffeeandtea.png',
       seleccionado: true
+    },
+    
+    {
+      img: 'bakery.png',
+      seleccionado: true
+    },
+      
+    {
+      img: 'healthy.png',
+      seleccionado: true
+    },
 
-
-    }
+    {
+      img: 'Fajitas.png',
+      seleccionado: true
+    },
+      
       
     
 

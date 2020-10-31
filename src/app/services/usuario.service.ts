@@ -27,6 +27,7 @@ token: string = null;
         this.http.post( 'http://localhost:3000/usuarios/login', usuario) 
         .subscribe( resp =>{
              console.log(resp);
+             //sessionStorage.setItem('token', resp.token);
    
              if(resp['ok']){
                this.guardarToken( resp['token'] );

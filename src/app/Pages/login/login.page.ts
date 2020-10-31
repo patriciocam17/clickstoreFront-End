@@ -49,6 +49,8 @@ constructor( private us: UsuarioService, private navCtrl: NavController,
 
    const exist = await this.us.login( this.loginUsuario.email, this.loginUsuario.password);
 
+  console.log(exist);
+
    if(exist){
      //navergar al tab
      this.navCtrl.navigateRoot('/main/tabs/tab1', {animated : true});
@@ -69,6 +71,15 @@ constructor( private us: UsuarioService, private navCtrl: NavController,
      //   } );
 
   }
+//  mostrarDatos(token: string): any {
+//       try{
+//           return jwt_decode(token);
+//       }
+//       catch(Error){
+//           return null;
+//       }
+//     }
+  
 
   mostrarRegistro(){
 this.slides.lockSwipes(false);

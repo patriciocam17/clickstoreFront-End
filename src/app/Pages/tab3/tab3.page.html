@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Cuenta
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!--Avatar-->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-avatar class="avatar">
+    <img src="/assets/avatars/av-1.png">
+    <ion-text>Patricio Campos</ion-text>
+  </ion-avatar>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <br>
+  <br>
+  <br>
+
+  <!--Caja de info-->
+
+  <ion-card class='margen'>
+  <ion-input placeholder="Nombre" value='Patricio'>Nombre:</ion-input>
+  <ion-input placeholder="Apellido" value='Campos'>Apellido:</ion-input>
+  <ion-input placeholder="Correo" value='patricio.campos17@inacapmail.cl'>Correo:</ion-input>
+  <ion-input type='password' placeholder="Contraseña" value='123456Aa!@hola'>Contraseña:</ion-input>
+  <br>
+  <ion-chip>
+    <ion-label color="primary">Restablece contraseña</ion-label>
+    <ion-icon name="key" color="Danger"></ion-icon>
+  </ion-chip>
+  <ion-chip>
+    <ion-label color="primary">Pago</ion-label>
+    <ion-icon name="card" color="Danger"></ion-icon>
+  </ion-chip>
+</ion-card>
 </ion-content>
